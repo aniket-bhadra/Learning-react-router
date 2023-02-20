@@ -10,7 +10,6 @@ import FeaturedProducts from "./components/products/product-list/FeaturedProduct
 import NewProducts from "./components/products/product-list/NewProducts";
 import Products from "./components/products/Products";
 
-
 function App() {
   return (
     <div className="App">
@@ -21,6 +20,10 @@ function App() {
         <Route path="order-summary" element={<OrderSummary />} />
 
         <Route path="products" element={<Products />}>
+          <Route index element={<FeaturedProducts />} />
+
+          {/* this index route contain the index prop not path, this index route will now share the path of the parent route which is products */}
+
           <Route path="featured" element={<FeaturedProducts />} />
           <Route path="new" element={<NewProducts />} />
         </Route>
