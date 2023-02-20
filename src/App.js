@@ -17,6 +17,7 @@ function App() {
         <Route path="order-summary" element={<OrderSummary />} />
 
         <Route path="*" element={<NoMatch />} />
+        {/*  this route will match only when no other routes match, position of this route not matters, the <NoMatch /> component only renders when no other routes match to the url coz the path="*"     */}
       </Routes>
     </div>
   );
