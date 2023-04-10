@@ -9,6 +9,8 @@ import NoMatch from "./components/NoMatch";
 import FeaturedProducts from "./components/products/product-list/FeaturedProducts";
 import NewProducts from "./components/products/product-list/NewProducts";
 import Products from "./components/products/Products";
+import Admin from "./components/Admin";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
 
         <Route path="*" element={<NoMatch />} />
         {/*  this route will match only when no other routes match, position of this route not matters, the <NoMatch /> component only renders when no other routes match to the url coz the path="*"     */}
+        <Route path="users/:userID" element={<UserDetails />} />
+        <Route path="users/admin" element={<Admin />} />
       </Routes>
     </div>
   );
