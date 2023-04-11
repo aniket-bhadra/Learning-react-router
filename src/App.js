@@ -21,7 +21,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<LazyAbout />} />
+        <Route
+          path="about"
+          element={
+            <React.Suspense fallback="Loading....">
+              <LazyAbout />
+            </React.Suspense>
+          }
+        />
         <Route path="order-summary" element={<OrderSummary />} />
 
         <Route path="products" element={<Products />}>
