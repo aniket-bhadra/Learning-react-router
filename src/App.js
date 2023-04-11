@@ -1,8 +1,9 @@
+import React from "react";
 import "./App.css";
 //for route configuration need 2 components from react router
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import OrderSummary from "./components/OrderSummary";
 import NoMatch from "./components/NoMatch";
@@ -12,6 +13,7 @@ import Products from "./components/products/Products";
 import Admin from "./components/Admin";
 import UserDetails from "./components/UserDetails";
 import Users from "./components/user/User";
+const LazyAbout = React.lazy(() => import("./components/About"));
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="about" element={<LazyAbout />} />
         <Route path="order-summary" element={<OrderSummary />} />
 
         <Route path="products" element={<Products />}>
