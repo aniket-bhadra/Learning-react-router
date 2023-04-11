@@ -13,6 +13,7 @@ import Products from "./components/products/Products";
 import Admin from "./components/Admin";
 import UserDetails from "./components/UserDetails";
 import Users from "./components/user/User";
+import Profile from "./components/user/Profile";
 const LazyAbout = React.lazy(() => import("./components/About"));
 
 function App() {
@@ -40,12 +41,14 @@ function App() {
           <Route path="new" element={<NewProducts />} />
         </Route>
 
-        <Route path="*" element={<NoMatch />} />
         {/*  this route will match only when no other routes match, position of this route not matters, the <NoMatch /> component only renders when no other routes match to the url coz the path="*"     */}
         <Route path="users" element={<Users />}>
           <Route path=":userID" element={<UserDetails />} />
           <Route path="admin" element={<Admin />} />
         </Route>
+        <Route path="profile" element={<Profile />} />
+
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
   );
